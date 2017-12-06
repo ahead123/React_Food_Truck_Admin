@@ -60,7 +60,7 @@ export default class FoodTrucks extends Component {
             edit_truck_name: ''
         });
         let updateColor = { background: '#5FB760', text: "#FFFFFF" };
-        notify.show('Food truck successfully updated!', 'custom', 20000, updateColor); 
+        notify.show('Food truck successfully updated!', 'custom', 2000, updateColor); 
     }
 
     confirmRemove = (event, truckID) => {
