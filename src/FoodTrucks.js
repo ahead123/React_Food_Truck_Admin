@@ -64,9 +64,14 @@ export default class FoodTrucks extends Component {
 
     confirmRemove = (event, truckID) => {
         event.preventDefault();
-        let userResponse = confirm('Are you sure you want to delete this item?');
-        if(userResponse){
-            this.removeItem(truckID)
+        if(!this.state.edit){
+            let userResponse = confirm('Are you sure you want to delete this item?');
+            if(userResponse){
+                this.removeItem(truckID)
+            }
+        }else{
+            let alertColor = {background: "#D75452", text: "#FFFFFF"};
+            notify.show('Please cancel edit mode before trying to delete!','custom',4000,alertColor)
         }
     }
 
