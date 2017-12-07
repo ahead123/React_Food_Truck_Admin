@@ -15,6 +15,7 @@ export default class EditForm extends Component {
                     />
                 </div>
                 <button className="btn btn-success btn-block" type="submit">Save Changes</button>
+                <button onClick={this.props.handleCancel} className="btn btn-danger btn-block" type="submit">Cancel</button>
             </form>
         )
     }

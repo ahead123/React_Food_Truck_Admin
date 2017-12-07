@@ -45,7 +45,6 @@ export default class FoodTrucks extends Component {
     handleEdit = (event, truckID) => {
         event.preventDefault();
         let updateTruck = this.state.food_trucks.filter(truck => truck.id == truckID);
-        console.log(updateTruck);
         this.setState({edit: true, edit_truck: updateTruck})
     }
 
@@ -104,6 +103,7 @@ export default class FoodTrucks extends Component {
                     value={this.state.edit_truck_name}
                     onChange={event => this.setState({edit_truck_name: event.target.value})}
                     onSubmit={this.updateTruck}
+                    handleCancel={(event)=> {event.preventDefault(); this.setState({edit: false, edit_truck_name: ''})}}
                 />
             )
         }
