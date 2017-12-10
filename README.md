@@ -8,6 +8,10 @@
 5. Start node in another terminal: `npm run server`
 5. Your app should now be running on [localhost:8080](http://localhost:8080/).
 
+## Live Demo
+
+* [Click here to see live demo hosted by stackblitz:](https://react-qoawsj.stackblitz.io/)
+
 ## Built With
 
 * [React](https://reactjs.org/) - For UI views and client side routing
