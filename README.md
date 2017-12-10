@@ -10,7 +10,9 @@
 
 ## Live Demo
 
-* [Click here to see live demo hosted by stackblitz:](https://react-qoawsj.stackblitz.io/)
+* [Click here to see live demo hosted by stackblitz:](https://react-qoawsj.stackblitz.io/) - Login credentials: 
+username: user_test1 
+password: password
 
 ## Built With
 
