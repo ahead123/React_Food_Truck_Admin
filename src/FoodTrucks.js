@@ -122,7 +122,8 @@ export default class FoodTrucks extends Component {
     }
 
     render(){
-        console.log(this.state)
+        console.log('this.state',this.state);
+        console.log('this.props',this.props);
         return(
             <div className="container">
                 <Notifications />

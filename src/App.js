@@ -16,7 +16,7 @@ export default class App extends Component {
           <h2>Food Truck Admin Dashboard</h2>
         </div>
         <div className="row text-center">
-          <FoodTrucks />
+          <FoodTrucks {...this.props}/>
         </div>
       </div>
 		);
