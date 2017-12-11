@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-* [Click here to see live demo hosted by stackblitz:](https://react-qoawsj.stackblitz.io/) - Login credentials: 
+* [Click here to see live demo hosted by stackblitz:](https://food-truck-admin-dash.stackblitz.io) - Login credentials: 
 username: user_test1 
 password: password
 
