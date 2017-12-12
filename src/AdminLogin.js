@@ -29,12 +29,11 @@ export default class AdminLogin extends Component {
       if(admin.user_name === user && admin.pass_word === pass){
         found_admin.push(admin)
         this.setState({ isAdmin: true, error: '', user: '', pass: '', loading: true });
-        let adminSuccess = { background: '#5FB760', text: "#FFFFFF" };
-        notify.show('Checking user in Admin Database...', 'custom', 4000, adminSuccess);
-        setTimeout(() => {
-          notify.show('Found user in Admin Database!... Logging in user now...','custom', 4000, adminSuccess)
-        }, 4400);
-        setTimeout(() => this.props.history.push('/food-trucks'), 9000);
+        this.loginAdmin(
+          'Checking user in Admin Database...',
+          'Found user in Admin Database!... Logging in user now...',
+          '/food-trucks'
+        );
       }
     });
     if(found_admin.length < 1){
@@ -42,6 +41,15 @@ export default class AdminLogin extends Component {
       let errorColor = { background: '#D75452', text: "#FFFFFF" };
        notify.show('Must have admin permissions to use this app!', 'custom', 3000, errorColor);
     }
+  }
+
+  loginAdmin = (message1, message2, redirectPath) => {
+    let adminSuccess = { background: '#5FB760', text: "#FFFFFF" };
+    notify.show(message1, 'custom', 4000, adminSuccess);
+    setTimeout(() => {
+      notify.show(message2,'custom', 4000, adminSuccess)
+    }, 4400);
+    setTimeout(() => this.props.history.push(redirectPath, {user_type: {admin: true}}), 9000);
   }
 
   render(){

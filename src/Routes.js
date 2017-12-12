@@ -13,10 +13,10 @@ const appRoutes = [
 		path: '/',
 		component: AdminLogin
 	},
-    {
-        path: '/food-trucks',
-        component: App
-    }
+  {
+    path: '/food-trucks',
+    component: App
+  }
 ];
 
 class Root extends Component {
@@ -26,12 +26,13 @@ class Root extends Component {
         appRoutes.map((item, index) => {
             const exact = item.exact ? item.exact : ''
             paths.push(
-                <Route 
-                    exact 
-                    path={item.path} 
-                    component={item.component}
-                    {...this.props} 
-                />
+              <Route 
+                exact 
+                path={item.path} 
+                component={item.component} 
+                key={index}
+                {...this.props} 
+              />
             )
         })
         return paths

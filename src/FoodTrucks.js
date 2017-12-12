@@ -24,6 +24,15 @@ export default class FoodTrucks extends Component {
         })
     }
 
+    checkAuth = () => {
+      console.log('props.location inside checkAuth',this.props.location);
+      if(this.props.location.state==undefined){
+        this.props.history.push('/')
+      }else if(this.props.location.state.user_type.admin){
+        return
+      }
+    }
+
     createTruck = (event) => {
         event.preventDefault();
         if(this.state.name!=''){
@@ -83,11 +92,11 @@ export default class FoodTrucks extends Component {
     }
 
     showTrucks = () => {
-        const { food_trucks } = this.state;
+        const { food_trucks, edit } = this.state;
         let allTrucks = [];
         food_trucks.map((truck, index) => {
             allTrucks.push(
-               <div className="col-md-3 well">
+               <div key={truck.name} className="col-md-3 well">
                 <FoodTruckList key={truck.id} name={truck.name} />
                 <span>
                     <button className="btn btn-warning" onClick={() => this.handleEdit(event, truck.id)}>edit</button>
@@ -122,8 +131,8 @@ export default class FoodTrucks extends Component {
     }
 
     render(){
-        console.log('this.state',this.state);
-        console.log('this.props',this.props);
+        console.log(this.state)
+        console.log(this.props)
         return(
             <div className="container">
                 <Notifications />
@@ -131,6 +140,7 @@ export default class FoodTrucks extends Component {
                     {this.showTrucks()}
                 </div>
                 {this.toggleForm()}
+                {this.checkAuth()}
             </div>
         )
     }
